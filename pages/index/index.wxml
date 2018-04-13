@@ -1,0 +1,24 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='items-list'>
+  <view class='pro-item' wx:for="{{proList}}" bindtap='toDetail' data-index='{{index}}'>
+    <image class='pro-logo' src='{{item.img}}'></image>
+    <view class='pro-body'>
+      <view class='pro-tile'>{{item.title}}</view>
+      <text class='pro-desc'>{{item.shortDesc}}</text>
+      <view class='pro-footer'>
+        <image class="btn-detail" src='/images/btn_detail.png'></image>
+        <button open-type="contact" class="btn-ask"><image src='/images/btn_ask.png' /></button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<button bindtap='copy'>复制内容</button>
